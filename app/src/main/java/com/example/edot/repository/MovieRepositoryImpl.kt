@@ -20,17 +20,24 @@ class MovieRepositoryImpl @Inject constructor(
                 r = "json",
                 page = page
             )
-//            if (result.isSuccessful) {
-//                val remoteData = result.body()
-//                val items = remoteData?.search
-//                return if (remoteData != null && !items.isNullOrEmpty()) {
-//                    Result.Success(items)
-//                } else {
-//                    Result.Success(emptyList())
-//                }
-//            } else {
-//                return Result.Error(Exception("Invalid data/failure"))
-//            }
+
+            /*
+            if (result.isSuccessful) {
+                val remoteData = result.body()
+                val items = remoteData?.search
+                return if (remoteData != null && !items.isNullOrEmpty()) {
+                    Result.Success(items)
+                } else {
+                    Result.Success(emptyList())
+                }
+            } else {
+                return Result.Error(Exception("Invalid data/failure"))
+            }*/
+
+            // Note: i commented previous code and use mock data because i always get 403 from rapidapi.com
+            // i already try to create new api key but i have to subscribe first and have to use credit card  which i don't have
+            // so i use mock data to show the image list and slider
+
             return Result.Success(getMockData())
         } catch (e: Exception) {
             Log.e("ApiCalls", "Call error: ${e.localizedMessage}", e.cause)

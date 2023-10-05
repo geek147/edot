@@ -1,3 +1,4 @@
+
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
@@ -19,7 +20,8 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         buildConfigField("String", "BASE_URL", "\"https://movie-database-alternative.p.rapidapi.com/\"")
-        buildConfigField("String", "API_KEY", "\"92841dc661msh88608923e905782p13aa07jsn08ca6d298f33\"")
+        val apiKey: String by project
+        buildConfigField("String", "API_KEY", apiKey)
     }
 
     buildTypes {
